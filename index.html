@@ -553,14 +553,14 @@
         });
     </script>
 
-    <!-- ===== ASSISTANT IA AVEC CLOUDFLARE ===== -->
+    <!-- ===== ASSISTANT IA AVEC CLOUDFLARE (VERSION DÉBOGAGE) ===== -->
 
     <!-- Interface du chatbot Cloudflare -->
     <div id="chatbot"
         style="position: fixed; bottom: 20px; right: 20px; width: 320px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: none; z-index: 9999;">
         <div style="background: #e4c972; color: white; padding: 12px; border-radius: 10px 10px 0 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;"
             onclick="toggleChat()">
-            <span>💬 Assistant IA</span>
+            <span>💬 Assistant IA (Debug)</span>
             <span
                 style="font-size: 12px; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px;">Cloudflare</span>
         </div>
@@ -599,19 +599,29 @@
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
             try {
-                // --- CONFIGURATION CLOUDFLARE (avec vos identifiants) ---
+                // --- CONFIGURATION ---
                 const CF_ACCOUNT_ID = '8ccefe764ffda434f7fbe0198a8f99d4';
                 const CF_GATEWAY_ID = 'auratus';
-
-                // --- VOTRE CLÉ API OPENAI ---
                 const OPENAI_API_KEY = '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';
 
-                // Construction de l'URL Cloudflare
+                // Construction de l'URL
                 const CLOUDFLARE_URL = `https://gateway.ai.cloudflare.com/v1/${CF_ACCOUNT_ID}/${CF_GATEWAY_ID}/compat/chat/completions`;
+                
+                console.log('1. URL Cloudflare:', CLOUDFLARE_URL);
+                console.log('2. Clé OpenAI (premiers caractères):', OPENAI_API_KEY.substring(0, 15) + '...');
+                console.log('3. Message envoyé:', message);
 
-                console.log('Tentative de connexion à:', CLOUDFLARE_URL);
+                // TEST 1 : Vérifier si l'URL est accessible
+                try {
+                    const testResponse = await fetch(CLOUDFLARE_URL, { method: 'HEAD' }).catch(e => null);
+                    console.log('4. Test de l\'URL (HEAD):', testResponse ? 'OK' : 'Échec');
+                } catch (e) {
+                    console.log('4. Test URL échoué:', e.message);
+                }
 
-                // ✅ CORRECTION : J'ai remplacé CLOUDFaaaaaaaaaaLARE_URL par CLOUDFLARE_URL
+                // TEST 2 : Envoyer la vraie requête
+                console.log('5. Envoi de la requête POST...');
+                
                 const response = await fetch(CLOUDFLARE_URL, {
                     method: 'POST',
                     headers: {
@@ -619,40 +629,39 @@
                         'Authorization': `Bearer ${OPENAI_API_KEY}`
                     },
                     body: JSON.stringify({
-                        model: 'openai/gpt-3.5-turbo',
+                        model: 'gpt-3.5-turbo',
                         messages: [
                             {
                                 role: 'system',
-                                content: 'Vous êtes un assistant utile pour le site de Patern Paternak (Auratus Affectueux), un développeur web et mobile congolais. Répondez de manière concise et professionnelle.'
+                                content: 'Vous êtes un assistant utile.'
                             },
                             { role: 'user', content: message }
                         ],
-                        max_tokens: 200,
-                        temperature: 0.7
+                        max_tokens: 100
                     })
                 });
 
-                // Supprimer l'indicateur de chargement
+                console.log('6. Statut de la réponse:', response.status);
+                console.log('7. En-têtes de réponse:', [...response.headers.entries()]);
+
                 document.getElementById('loading')?.remove();
 
                 if (!response.ok) {
                     const errorText = await response.text();
-                    console.error('Erreur API Cloudflare:', response.status, errorText);
-                    throw new Error(`Erreur API: ${response.status}`);
+                    console.error('8. Corps de l\'erreur:', errorText);
+                    throw new Error(`Erreur ${response.status}: ${errorText.substring(0, 100)}`);
                 }
 
                 const data = await response.json();
+                console.log('9. Réponse JSON reçue:', data);
+                
                 var reply = data.choices[0].message.content;
-
-                // Afficher la réponse
                 messagesDiv.innerHTML += `<div style="text-align: left; margin: 5px;"><div style="background: #f1f5f9; color: #333; padding: 8px 12px; border-radius: 15px 15px 15px 0; display: inline-block; max-width: 80%;"><strong>IA:</strong> ${reply}</div></div>`;
 
             } catch (error) {
-                // Supprimer l'indicateur de chargement
                 document.getElementById('loading')?.remove();
-
-                console.error('Erreur attrapée:', error);
-                messagesDiv.innerHTML += `<div style="text-align: center; margin: 5px; color: #dc3545; font-style: italic;">❌ Erreur : impossible de contacter l'IA. Détail: ${error.message}</div>`;
+                console.error('10. ERREUR CATASTROPHIQUE:', error);
+                messagesDiv.innerHTML += `<div style="text-align: center; margin: 5px; color: #dc3545; font-style: italic;">❌ Erreur : ${error.message}</div>`;
             }
 
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
