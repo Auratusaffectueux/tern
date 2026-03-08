@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auratus_affectueux</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Notre CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="gred.png">
+    <style>
+        /* Ajustement pour le bouton dans la section à propos */
+        .apropos-container {
+            position: relative;
+        }
+
+        .btn-cv-right {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .btn-cv {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .btn-cv:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        /* Styles pour le chatbot */
+        #chatbot {
+            transition: all 0.3s ease;
+        }
+
+        .chat-message {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #e4c972;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .ai-message {
+            background: #f1f5f9;
+            color: #333;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Patern_Paternak</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#a-propos">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#souvenirs">Souvenirs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#discutons">Discutons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== ACCUEIL ===== -->
+    <section id="accueil">
+        <div class="container">
+            <div class="accueil-content">
+                <div class="accueil-text" data-aos="fade-right">
+                    <h1><span>Patern Paternak </span><br>dit <span>Auratus Affectueux</span></h1>
+                    <p>Jeune informaticien enthousiaste avec plus de 2 ans d'expérience dans la conception de sites web
+                        modernes et le développement d'applications web et mobiles.</p>
+                </div>
+                <div class="accueil-img" data-aos="fade-left">
+                    <img src="profile.jpg" alt="Patern AK" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="a-propos" style="background: #f9f5f0; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="apropos-container" data-aos="fade-up">
+                        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                            Passionné par l'informatique depuis mon plus jeune âge, je suis actuellement en formation
+                            d'ingénieur avec une spécialisation en architectures modernes, cybersécurité (en formation)
+                            et
+                            développement d'applications. Mon parcours m'a permis d'acquérir une solide expérience dans
+                            la conception de sites web et d'applications mobiles, ainsi qu'une forte capacité à analyser
+                            les besoins clients pour proposer des solutions innovantes et déterminées.
+                        </p>
+                        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                            Rigoureux, curieux et toujours en veille technologique, je suis membre actif de la
+                            communauté Google Web Developpers Bukavu et contributeur open source. En dehors du code et
+                            de la vie informatique, je
+                            pratique le scoutisme, le basketball et je participe à des formations en art oratoire.
+                        </p>
+                        <!-- Bouton CV aligné à droite -->
+                        <div class="btn-cv-right">
+                            <a href="moncv.html" class="btn-cv" target="_blank"><i class="fas fa-download me-2"></i>Voir
+                                mon CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPÉTENCES ===== -->
+    <section id="competences">
+        <div class="container">
+            <h2 class="section-title">Mes compétences</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-down">
+                    <p class="competence-quote">
+                        "Avec une documentation continuelle à des nouvelles notions de l'informatique, je me fixe les
+                        objectifs de surmonter à toutes les épreuves tout en développant ma capacité avec la formation
+                        chez Openclassroom."
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Colonne gauche -->
+                <div class="col-md-6">
+                    <div class="skill-item" data-aos="fade-up">
+                        <div class="skill-info">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                            <span class="ms-auto">75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-info">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-info">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                            <span class="ms-auto">65%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Colonne droite -->
+                <div class="col-md-6">
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-info">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                            <span class="ms-auto">6O%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="skill-info">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                            <span class="ms-auto">70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="skill-info">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                            <span class="ms-auto">50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJETS ===== -->
+    <section id="projets" style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Mes projets</h2>
+            <div class="row">
+                <!-- Projet 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="card">
+                        <img src="sitecole.png" class="card-img-top" alt="Site école">
+                        <div class="card-body">
+                            <h5 class="card-title">Site web pour une école</h5>
+                            <p class="card-text">Création d'un site vitrine moderne pour une école primaire avec gestion
+                                des actualités.</p>
+                            <div class="tech-icons">
+                                <i class="fab fa-html5" title="HTML5"></i>
+                                <i class="fab fa-css3-alt" title="CSS3"></i>
+                                <i class="fab fa-js" title="JavaScript"></i>
+                                <i class="fab fa-php" title="PHP"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="facture.png" class="card-img-top" alt="Système facturation">
+                        <div class="card-body">
+                            <h5 class="card-title">Système de facturation</h5>
+                            <p class="card-text">Application web de facturation pour une entreprise avec génération des
+                                factures.</p>
+                            <div class="tech-icons">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-database" title="MySQL"></i>
+                                <i class="fab fa-html5" title="HTML5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="market.png" class="card-img-top" alt="E-commerce">
+                        <div class="card-body">
+                            <h5 class="card-title">Site e-commerce</h5>
+                            <p class="card-text">Boutique en ligne complète avec panier, paiement et gestion des
+                                commandes.</p>
+                            <div class="tech-icons">
+                                <i class="fab fa-php" title="PHP"></i>
+                                <i class="fas fa-database" title="MySQL"></i>
+                                <i class="fab fa-js" title="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <img src="bullettin.png" class="card-img-top" alt="Logiciel bulletins">
+                        <div class="card-body">
+                            <h5 class="card-title">Calcul des côtes avec Excel </h5>
+                            <p class="card-text">Logiciel de calcul de points et génération de bulletins scolaires.
+                                (Projet en cours)</p>
+                            <div class="tech-icons">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-file-excel" title="Excel"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <img src="mobile.png" class="card-img-top" alt="Application mobile">
+                        <div class="card-body">
+                            <h5 class="card-title">Application mobile pour la traduction vocale</h5>
+                            <p class="card-text">Application pour enregistrer la voix d'un émetteur et la faire sortir
+                                dans une langue autre que la langue d'émission (Android/iOS).</p>
+                            <div class="tech-icons">
+                                <i class="fab fa-java" title="Java"></i>
+                                <i class="fab fa-node-js" title="Node.js"></i>
+                                <i class="fab fa-python" title="Python"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOUVENIRS ===== -->
+    <section id="souvenirs">
+        <div class="container">
+            <h2 class="section-title">Souvenirs</h2>
+            <div class="row">
+                <!-- Exemple de 6 souvenirs -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+                    <div class="souvenir-item">
+                        <img src="souvenir1.jpeg" alt="Souvenir 1" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>Fête de l'année en famille</h5>
+                            <p>3 Janvier 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="souvenir-item">
+                        <img src="souvenir2.jpeg" alt="Souvenir 2" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>Messe de clôture de l'année 2025 à l'UOB</h5>
+                            <p>10 août 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="souvenir-item">
+                        <img src="souvenir3.jpeg" alt="Souvenir 3" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>Visite à une amie éprouvée</h5>
+                            <p>En mars 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="souvenir-item">
+                        <img src="souvenir4.jpeg" alt="Souvenir 4" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>En terminal à Munzihirwa</h5>
+                            <p>Juillet 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="souvenir-item">
+                        <img src="souvenir5.jpeg" alt="Souvenir 5" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>Avec ma famille Scoute</h5>
+                            <p>22 Février 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="souvenir-item">
+                        <img src="souvenir6.jpg" alt="Souvenir 6" class="img-fluid">
+                        <div class="souvenir-caption">
+                            <h5>Formation en équipe du langage Python</h5>
+                            <p>Session de Février</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISCUTONS D'UN PROJET ===== -->
+    <section id="discutons" style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Discutons sur un projet</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-down">
+                    <p class="lead mb-5 discutons-quote">
+                        "Ma double compétence – à la fois technique et analytique – me permet d'analyser finement les
+                        besoins clients et de proposer des solutions innovantes, robustes et performantes. Rigoureux,
+                        Affectueux, Poli et curieux ; je suis aujourd'hui à la recherche de nouveaux défis techniques au
+                        sein d'une équipe dynamique où je pourrai mettre à profit mon adaptabilité et ma passion pour
+                        l'innovation."
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Formulaire de contact (Discutons) avec EmailJS -->
+                    <form id="contact-form" class="bg-white p-5 rounded-4 shadow" data-aos="fade-up">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Envoyer <i
+                                class="fas fa-paper-plane ms-2"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOUS CONTACTER ===== -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Nous contacter</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <p class="contact-quote">
+                        "La satisfaction de nos clients et la concrétisation exemplaire de leurs projets sont au cœur
+                        de nos priorités. Nous savons que chaque client attend avec confiance un résultat à la hauteur
+                        de ses aspirations, et nous nous engageons à fournir un travail minutieux, fidèle à ses
+                        attentes"
+                    </p>
+                </div>
+            </div>
+            <div class="social-icons" data-aos="zoom-in">
+                <a href="https://www.facebook.com/Patern_dit_auratus_affectueux/" class="social-icon" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/patern62568" class="social-icon" target="_blank"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/votre-identifiant/" class="social-icon" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Auratusaffectueux/" class="social-icon" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/Auratus_affectueux/" class="social-icon" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/243986909837" class="social-icon" target="_blank"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 footer-widget">
+                    <h5>Patern AK</h5>
+                    <p>Jeune informaticien enthousiaste, développeur web et mobile. Toujours prêt pour de nouveaux
+                        défis.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> RDCongo Sud-Kivu/Bukavu_Brasserie</li>
+                        <li><i class="fas fa-phone"></i> +243 986 909 837</li>
+                        <li><i class="fas fa-envelope"></i> paternpaternak@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-widget">
+                    <h5>Liens rapides</h5>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#competences">Compétences</a></li>
+                        <li><a href="#projets">Projets</a></li>
+                        <li><a href="#souvenirs">Souvenirs</a></li>
+                        <li><a href="#discutons">Discutons</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-widget">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir mes actualités</p>
+                    <!-- Formulaire newsletter avec EmailJS -->
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" name="email" class="form-control" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <a href="mentions.html" class="text-white-50 me-3">Mentions légales</a>
+                    <a href="politique.html" class="text-white-50">Politique de confidentialité</a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="https://info.flagcounter.com/Aq7z">
+                        <img src="https://s01.flagcounter.com/count/Aq7z/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                            alt="Flag Counter" border="0">
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; Copyright 2025. Tous droits réservés.</p>
+                <p>Set by <a href="https://www.facebook.com/Patern_Dit_auratus_affectueux/"
+                        target="_blank">Auratus_affectueux</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <!-- Scripts EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialisation avec votre clé publique
+        (function () {
+            emailjs.init("B96MThXW8h-oKP7j7");
+        })();
+
+        // --- Formulaire de contact (Discutons) ---
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            emailjs.sendForm('service_fgiq301', 'template_4zop38h', this)
+                .then(function (response) {
+                    alert('Message envoyé avec succès !');
+                    document.getElementById('contact-form').reset();
+                }, function (error) {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                    console.log(error);
+                });
+        });
+
+        // --- Formulaire de newsletter ---
+        document.getElementById('newsletter-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            emailjs.sendForm('service_fgiq301', 'template_dcys279', this)
+                .then(function (response) {
+                    alert('Inscription réussie ! Merci.');
+                    document.getElementById('newsletter-form').reset();
+                }, function (error) {
+                    alert('Erreur lors de l\'inscription. Veuillez réessayer.');
+                    console.log(error);
+                });
+        });
+    </script>
+
+    <!-- ===== ASSISTANT IA AVEC CLOUDFLARE ===== -->
+
+    <!-- Interface du chatbot Cloudflare -->
+    <div id="chatbot"
+        style="position: fixed; bottom: 20px; right: 20px; width: 320px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: none; z-index: 9999;">
+        <div style="background: #e4c972; color: white; padding: 12px; border-radius: 10px 10px 0 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;"
+            onclick="toggleChat()">
+            <span>💬 Assistant IA</span>
+            <span
+                style="font-size: 12px; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px;">Cloudflare</span>
+        </div>
+        <div id="chat-messages" style="height: 300px; overflow-y: auto; padding: 10px; background: #f9f9f9;"></div>
+        <div style="display: flex; padding: 10px; border-top: 1px solid #ddd;">
+            <input type="text" id="chat-input" placeholder="Posez votre question..."
+                style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 20px; margin-right: 5px;">
+            <button onclick="sendMessage()"
+                style="background: #e4c972; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">➤</button>
+        </div>
+    </div>
+
+    <!-- Bouton pour ouvrir le chat -->
+    <button onclick="toggleChat()"
+        style="position: fixed; bottom: 20px; right: 20px; background: #e4c972; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 9998;">💬</button>
+
+    <script>
+        function toggleChat() {
+            var chat = document.getElementById('chatbot');
+            chat.style.display = chat.style.display === 'none' ? 'block' : 'none';
+        }
+
+        async function sendMessage() {
+            var input = document.getElementById('chat-input');
+            var message = input.value.trim();
+            if (!message) return;
+
+            var messagesDiv = document.getElementById('chat-messages');
+
+            // Afficher le message de l'utilisateur
+            messagesDiv.innerHTML += `<div style="text-align: right; margin: 5px;"><div style="background: #e4c972; color: white; padding: 8px 12px; border-radius: 15px 15px 0 15px; display: inline-block; max-width: 80%;"><strong>Vous:</strong> ${message}</div></div>`;
+            input.value = '';
+
+            // Afficher un indicateur de chargement
+            messagesDiv.innerHTML += `<div id="loading" style="text-align: left; margin: 5px;"><div style="background: #f1f5f9; color: #666; padding: 8px 12px; border-radius: 15px 15px 15px 0; display: inline-block;">IA réfléchit...</div></div>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            try {
+                // --- CONFIGURATION CLOUDFLARE (avec vos identifiants) ---
+                const CF_ACCOUNT_ID = '8ccefe764ffda434f7fbe0198a8f99d4';
+                const CF_GATEWAY_ID = 'auratus';
+
+                // --- VOTRE CLÉ API OPENAI ---
+                const OPENAI_API_KEY = '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';
+
+                // Construction de l'URL Cloudflare
+                const CLOUDFLARE_URL = `https://gateway.ai.cloudflare.com/v1/${CF_ACCOUNT_ID}/${CF_GATEWAY_ID}/compat/chat/completions`;
+
+                console.log('Tentative de connexion à:', CLOUDFLARE_URL);
+
+                // ✅ CORRECTION : J'ai remplacé CLOUDFaaaaaaaaaaLARE_URL par CLOUDFLARE_URL
+                const response = await fetch(CLOUDFLARE_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: 'openai/gpt-3.5-turbo',
+                        messages: [
+                            {
+                                role: 'system',
+                                content: 'Vous êtes un assistant utile pour le site de Patern Paternak (Auratus Affectueux), un développeur web et mobile congolais. Répondez de manière concise et professionnelle.'
+                            },
+                            { role: 'user', content: message }
+                        ],
+                        max_tokens: 200,
+                        temperature: 0.7
+                    })
+                });
+
+                // Supprimer l'indicateur de chargement
+                document.getElementById('loading')?.remove();
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Erreur API Cloudflare:', response.status, errorText);
+                    throw new Error(`Erreur API: ${response.status}`);
+                }
+
+                const data = await response.json();
+                var reply = data.choices[0].message.content;
+
+                // Afficher la réponse
+                messagesDiv.innerHTML += `<div style="text-align: left; margin: 5px;"><div style="background: #f1f5f9; color: #333; padding: 8px 12px; border-radius: 15px 15px 15px 0; display: inline-block; max-width: 80%;"><strong>IA:</strong> ${reply}</div></div>`;
+
+            } catch (error) {
+                // Supprimer l'indicateur de chargement
+                document.getElementById('loading')?.remove();
+
+                console.error('Erreur attrapée:', error);
+                messagesDiv.innerHTML += `<div style="text-align: center; margin: 5px; color: #dc3545; font-style: italic;">❌ Erreur : impossible de contacter l'IA. Détail: ${error.message}</div>`;
+            }
+
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+
+</body>
+
+</html>
