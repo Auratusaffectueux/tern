@@ -1,0 +1,41 @@
+# Patern Paternak (Auratus Affectueux) - Développeur Web & Mobile
+
+## Profil
+Patern Paternak, alias Auratus Affectueux. Développeur web et mobile basé à Bukavu (RDCongo). Jeune informaticien avec 2+ ans d'expérience, actuellement en formation d'ingénieur (architectures modernes, cybersécurité). Membre Google Web Developers Bukavu, contributeur open source.
+
+## Compétences
+- Python : 75%
+- CSS3 : 70%
+- JavaScript : 65%
+- HTML5 : 60%
+- PHP : 70%
+- SQL : 50%
+
+## Projets
+1. **Site web école primaire** : Site vitrine moderne avec gestion d'actualités.
+2. **Système de facturation** : Application web de facturation pour entreprise.
+3. **Site e-commerce** : Boutique en ligne complète (panier, paiement, commandes).
+4. **Calcul des côtes (Excel)** : Logiciel de génération de bulletins scolaires.
+5. **Application traduction vocale** : App Android/iOS de traduction vocale temps réel.
+
+## Contact
+- Email : paternpaternak@gmail.com
+- Téléphone : +243 986 909 837
+- Localisation : Bukavu, Sud-Kivu, RDCongo
+- GitHub : https://github.com/Auratusaffectueux
+- WhatsApp : https://wa.me/243986909837
+
+## Réseaux sociaux
+- Facebook : https://www.facebook.com/Patern_dit_auratus_affectueux
+- Twitter : https://x.com/patern62568
+- Instagram : https://www.instagram.com/Auratus_affectueux
+- LinkedIn : (URL à ajouter si disponible)
+
+## Liens internes
+- [CV complet](/moncv.html)
+- [Mentions légales](/mentions.html)
+- [Politique de confidentialité](/politique.html)
+
+---
+
+`Dernière mise à jour : 2026-03-08`
